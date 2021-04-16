@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
   end
   
   def create
-    @task = Task.new(tasks_params)
+    @task = Task.new(task_params)
     
     if @task.save
       flash[:success] = "Taskが正常に登録されました"
@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   end
   
   def edit
-    @task = Task.finnd(params[:id])
+    @task = Task.find(params[:id])
   end
   
   def update
